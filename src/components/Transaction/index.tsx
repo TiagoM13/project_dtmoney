@@ -1,6 +1,13 @@
+import { useEffect } from "react"
 import { Container } from "./styles"
 
 export const Transaction = () => {
+  useEffect(() => {
+    fetch("http://localhost:3000/api/transactions")
+      .then(response => response.json())
+      .then(data => console.log(data))
+  }, []);
+
   return (
     <Container>
       <table>
@@ -9,7 +16,7 @@ export const Transaction = () => {
             <th>Título</th>
             <th>Valor</th>
             <th>Categoria</th>
-            <th>Data</th>
+            <th>Data</th> 
           </tr>
         </thead>
 
