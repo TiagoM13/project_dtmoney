@@ -1,8 +1,9 @@
 import { useContext } from "react";
+import { TransactionsContext } from "../../TransactionsContext";
+
 import Income from "../../assets/income.svg";
 import Outcome from "../../assets/outcome.svg";
 import Total from "../../assets/total.svg";
-import { TransactionsContext } from "../../TransactionsContext";
 
 import { Container } from './styles';
 
