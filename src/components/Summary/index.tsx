@@ -8,7 +8,7 @@ import Total from "../../assets/total.svg";
 import { Container } from './styles';
 
 export const Summary = () => {
-  const transactions = useContext(TransactionsContext);
+  const { transactions } = useContext(TransactionsContext);
 
   console.log(transactions);
   
