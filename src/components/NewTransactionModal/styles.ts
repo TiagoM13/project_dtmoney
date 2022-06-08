@@ -18,7 +18,7 @@ export const Container = styled.form`
     background: #e7e7ee;
 
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 0.8rem;
 
     &::placeholder {
       color: var(--text-body);

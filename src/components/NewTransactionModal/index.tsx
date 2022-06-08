@@ -2,7 +2,6 @@ import { FormEvent, useState, useContext } from "react";
 import Modal from "react-modal";
 
 import { TransactionsContext } from "../../TransactionsContext";
-import { api } from "../../services/api";
 
 import incomeImg from "../../assets/income.svg"
 import outcomeImg from "../../assets/outcome.svg"
@@ -23,15 +22,21 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
   const [ category, setCategory ] = useState('');
   const [ type, setType ] = useState('deposit');
 
-  function  hendleCreateNewTransaction(event: FormEvent ) {
+  async function  hendleCreateNewTransaction(event: FormEvent ) {
     event.preventDefault();
 
-    createTransaction({
+    await createTransaction({
       title,
       amount,
       category,
       type,
     })
+
+    setTitle('');
+    setAmount(0);
+    setCategory('');
+    setType('deposit');
+    onRequestClose();
   }
 
   return (
@@ -62,7 +67,7 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
         <input 
           type="number"
           placeholder="Valor"  
-          value={amount}
+          defaultValue={amount}
           onChange={event => setAmount(Number(event.target.value))}
         />
 
