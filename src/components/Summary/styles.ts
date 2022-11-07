@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
@@ -28,7 +28,7 @@ export const Container = styled.div`
 
     &.background-green {
       background: var(--green);
-      color: #FFF;
+      color: #fff;
     }
-  } 
+  }
 `;

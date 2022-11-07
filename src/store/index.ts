@@ -6,4 +6,4 @@ export interface ITransactionModal {
 
 export const isTransactionModal = new Store<ITransactionModal>({
   state: false,
-})
+});

@@ -1,6 +1,10 @@
-import logoImg from '../../assets/logo.svg';
-import { handleOpenNewTransaction } from '../../store/actions';
-import { Container, Content } from './styles';
+import React from "react";
+
+import logoImg from "assets/logo.svg";
+
+import { handleOpenNewTransaction } from "store/actions";
+
+import { Container, Content } from "./styles";
 
 export function Header() {
   return (
@@ -14,4 +18,3 @@ export function Header() {
     </Container>
   );
 }
-
