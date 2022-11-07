@@ -6,7 +6,7 @@ import { handleOpenNewTransaction } from "store/actions";
 
 import { Container, Content } from "./styles";
 
-export function Header() {
+export const Header = () => {
   return (
     <Container>
       <Content>
@@ -17,4 +17,4 @@ export function Header() {
       </Content>
     </Container>
   );
-}
+};

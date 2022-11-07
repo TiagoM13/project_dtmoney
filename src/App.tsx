@@ -9,7 +9,7 @@ import { GlobalStyles } from "./styles/global";
 
 Modal.setAppElement("#root");
 
-export function App() {
+const App = () => {
   return (
     <TransactionProvider>
       <Header />
@@ -18,4 +18,6 @@ export function App() {
       <GlobalStyles />
     </TransactionProvider>
   );
-}
+};
+
+export default App;

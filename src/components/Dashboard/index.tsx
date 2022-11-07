@@ -5,11 +5,11 @@ import { Transaction } from "components/Transaction";
 
 import { Container } from "./styles";
 
-export function Dashboard() {
+export const Dashboard = () => {
   return (
     <Container>
       <Summary />
       <Transaction />
     </Container>
   );
-}
+};

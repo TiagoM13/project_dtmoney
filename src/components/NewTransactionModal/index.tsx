@@ -13,7 +13,7 @@ import { handleCloseNewTransaction } from "store/actions";
 
 import { Container, TransactionTypeContainer, RadioBox } from "./styles";
 
-export function NewTransactionModal() {
+export const NewTransactionModal = () => {
   const { createTransaction } = useTransactions();
   const state = useModaState();
 
@@ -106,4 +106,4 @@ export function NewTransactionModal() {
       </Container>
     </Modal>
   );
-}
+};
