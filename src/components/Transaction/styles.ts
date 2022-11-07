@@ -34,5 +34,21 @@ export const Container = styled.div`
         color: var(--green);
       }
     }
+
+    @media (max-width: 680px) {
+      td {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 580px) {
+      th {
+        padding: 0.8rem 0.625rem;
+      }
+
+      td {
+        padding: 0.8rem 0.625rem;
+      }
+    }
   }
 `;
