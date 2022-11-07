@@ -3,7 +3,7 @@ import Outcome from "../../assets/outcome.svg";
 import Total from "../../assets/total.svg";
 
 import { Container } from './styles';
-import { useTransactions } from "../hooks/useTransactions";
+import { useTransactions } from "../../hooks/useTransactions";
 
 export const Summary = () => {
   const { transactions } = useTransactions();

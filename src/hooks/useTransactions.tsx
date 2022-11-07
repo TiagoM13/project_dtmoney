@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api } from '../services/api';
 
 interface Transaction {
   id: number;
@@ -33,7 +33,7 @@ export function TransactionProvider({ children }: TransactionsProviderProps) {
       .then(response => setTransactions(response.data.transactions))
   }, []);
 
-  async function  createTransaction(transactionInput: TransactionInput) {
+  async function createTransaction(transactionInput: TransactionInput) {
     const response = await api.post('/transactions', {
       ...transactionInput,
       createdAt: new Date(),

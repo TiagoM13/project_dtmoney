@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import Modal from "react-modal";
-import { useTransactions } from "../hooks/useTransactions";
+import { useTransactions } from "../../hooks/useTransactions";
 
 
 import incomeImg from "../../assets/income.svg"
@@ -14,15 +14,15 @@ interface NewTransactionModalProps {
   onRequestClose: () => void;
 }
 
-export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModalProps) {
+export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
   const { createTransaction } = useTransactions();
 
-  const [ title, setTitle ] = useState('');
-  const [ amount, setAmount ] = useState(0);
-  const [ category, setCategory ] = useState('');
-  const [ type, setType ] = useState('deposit');
+  const [title, setTitle] = useState('');
+  const [amount, setAmount] = useState(0);
+  const [category, setCategory] = useState('');
+  const [type, setType] = useState('deposit');
 
-  async function  hendleCreateNewTransaction(event: FormEvent ) {
+  async function hendleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
 
     await createTransaction({
@@ -47,8 +47,8 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
       className="react-modal-content"
     >
 
-      <button 
-        type="button" 
+      <button
+        type="button"
         onClick={onRequestClose}
         className="react-modal-close"
       >
@@ -58,15 +58,15 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
       <Container onSubmit={hendleCreateNewTransaction}>
         <h2>Cadastrar transação</h2>
 
-        <input 
+        <input
           placeholder="Título"
           value={title}
           onChange={event => setTitle(event.target.value)}
         />
 
-        <input 
+        <input
           type="number"
-          placeholder="Valor"  
+          placeholder="Valor"
           defaultValue={amount}
           onChange={event => setAmount(Number(event.target.value))}
         />
@@ -93,7 +93,7 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
           </RadioBox>
         </TransactionTypeContainer>
 
-        <input 
+        <input
           placeholder="Categoria"
           value={category}
           onChange={event => setCategory(event.target.value)}
