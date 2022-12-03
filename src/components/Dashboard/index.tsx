@@ -1,13 +1,15 @@
-import { Summary } from '../Summary';
-import { Transaction } from '../Transaction';
+import React from "react";
 
-import { Container } from './styles';
+import { Summary } from "components/Summary";
+import { Transaction } from "components/Transaction";
 
-export function Dashboard() {
+import { Container } from "./styles";
+
+export const Dashboard = () => {
   return (
     <Container>
       <Summary />
       <Transaction />
     </Container>
   );
-}
+};

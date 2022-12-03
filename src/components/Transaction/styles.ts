@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   margin-top: 4rem;
@@ -32,6 +32,22 @@ export const Container = styled.div`
 
       &.deposit {
         color: var(--green);
+      }
+    }
+
+    @media (max-width: 680px) {
+      td {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 580px) {
+      th {
+        padding: 0.8rem 0.625rem;
+      }
+
+      td {
+        padding: 0.8rem 0.625rem;
       }
     }
   }

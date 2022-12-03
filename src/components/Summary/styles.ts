@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
@@ -28,7 +28,37 @@ export const Container = styled.div`
 
     &.background-green {
       background: var(--green);
-      color: #FFF;
+      color: #fff;
     }
-  } 
+  }
+
+  @media (max-width: 920px) {
+    gap: 0.875rem;
+  }
+
+  @media (max-width: 780px) {
+    div {
+      strong {
+        font-size: 1.625rem;
+      }
+    }
+  }
+
+  @media (max-width: 640px) {
+    div {
+      strong {
+        font-size: 1.45rem;
+      }
+    }
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: none;
+
+    div {
+      strong {
+        font-size: 1.8rem;
+      }
+    }
+  }
 `;
