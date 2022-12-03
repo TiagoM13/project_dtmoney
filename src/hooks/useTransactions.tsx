@@ -1,38 +1,19 @@
-import React, {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+
+import { Transaction } from "interfaces/transaction";
+import {
+  TransactionInput,
+  TransactionsContextData,
+} from "interfaces/transactionData";
+import { TransactionsProvider } from "interfaces/transactionsProvider";
 
 import { api } from "../services/api";
-
-interface Transaction {
-  id: number;
-  title: string;
-  amount: number;
-  type: string;
-  category: string;
-  createdAt: string;
-}
-
-type TransactionInput = Omit<Transaction, "id" | "createdAt">;
-
-interface TransactionsProviderProps {
-  children: ReactNode;
-}
-
-interface TransactionsContextData {
-  transactions: Transaction[];
-  createTransaction: (transaction: TransactionInput) => Promise<void>;
-}
 
 const TransactionsContext = createContext<TransactionsContextData>(
   {} as TransactionsContextData
 );
 
-export function TransactionProvider({ children }: TransactionsProviderProps) {
+export function TransactionProvider({ children }: TransactionsProvider) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   useEffect(() => {
